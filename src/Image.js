@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import HttpClient from "./HttpClient";
 import "./css/Image.css";
 
 const Image = () => {
