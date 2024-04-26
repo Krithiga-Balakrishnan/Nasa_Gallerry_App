@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from './js/Card';
 import axios from 'axios'; // Import axios
-import moment from 'moment';
 import './css/Home.css';
 const Home = () => {
     const [randomImages, setRandomImages] = useState([]);
