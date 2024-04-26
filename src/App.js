@@ -7,19 +7,19 @@ import Home from './Home';
 import ImageOftheDay from './ImageOftheDay';
 import MarsRover from "./MarsRover";
 
-
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
         <div className="content" >
-          <Routes> {/* Wrap routes with <Routes> */}
-            <Route path="/home" element={<Home />} /> {/* Use 'element' prop to specify the component */}
+          <Routes> 
+            <Route path="/home" element={<Home />} /> 
             <Route path="/image" element={<Image />} />
             <Route path="/image-of-the-day" element={<ImageOftheDay />} /> {/* Route for ImageOftheDay component */}
             <Route path="/mars-rover" element={<MarsRover />} /> {/* Route for ImageOftheDay component */}
           </Routes>
+         
         </div>
       </div>
     </Router>

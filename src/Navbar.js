@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   const websiteName = "The Nasa App Gallery";
 
@@ -14,13 +16,13 @@ const Navbar = () => {
         </div>
       </div>
       <div className='links'>
-        <a href='/home'>Home</a>
-        <a href='/mars-rover'>Mars rover Photos</a>
+      <Link to="/home">Home</Link>
+      <Link to="/mars-rover">Mars Rover</Link>
         <div className="dropdown">
           <button className="dropbtn">Images</button>
           <div className="dropdown-content">
-            <a href="/Image">Picture of the day</a>
-            <a href="/image-of-the-day">Image of any Day</a>
+          <Link to="/image">Picture of the day</Link>
+          <Link to="/image-of-the-day">Image of any Day</Link>
             <a href="/">Image 3</a>
           </div>
         </div>
