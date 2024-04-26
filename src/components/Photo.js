@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Photo = props => {
   console.log('Photo component props:', props); // Log props to console for debugging
 

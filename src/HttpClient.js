@@ -50,8 +50,11 @@ const getMarsPhoto = (date, camera) => {
     });
 };
 
-export default {
+const HttpClient = {
   getApod,
   getPhoto,
   getMarsPhoto
 };
+
+export default HttpClient;
+
