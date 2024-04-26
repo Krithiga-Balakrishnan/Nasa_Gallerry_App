@@ -1,0 +1,30 @@
+.submit-button {
+    background-color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; /* Add transition for smooth color change */
+
+    /* Add any additional styling you need */
+}
+
+.submit-button:hover {
+    
+    background-color: rgb(166, 61, 166); /* Change background color on hover */
+    color: white;
+}
+
+.input-container {
+    display: flex; /* Use flexbox to display the date picker and submit button in a row */
+    align-items: center; /* Align items vertically in the center */
+}
+
+.date-picker-container {
+    margin-right: 10px; /* Add margin between date picker and submit button */
+}
+
+.submit-button-container {
+    margin-left: 10px; /* Add margin between date picker and submit button */
+}
+

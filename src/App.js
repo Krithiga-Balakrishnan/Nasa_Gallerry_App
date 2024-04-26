@@ -1,39 +1,30 @@
 
 //import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Image from "./Image"; 
 import Navbar from './Navbar';
 import Home from './Home';
-import React, { useState, useEffect } from "react"
-import HttpClient from "./HttpClient"
+import ImageOftheDay from './ImageOftheDay';
+import MarsRover from "./MarsRover";
 
-const  App= () => {
-  const [apod, setApod] = useState({})
 
-  useEffect(() => {
-    HttpClient.getApod().then(apodData => {
-      setApod(apodData.data)
-    })
-  }, [])
+function App() {
   return (
-    <div className="App">
-    <Navbar/>
-    
-    <div className='content'>
-      <Home/>
-      
-    </div>
-    <h3>Astronomy Picture of the Day</h3>
-    {apod && (
-        <article>
-          <header>
-            {apod.title} - <i>{apod.date}</i>
-          </header>
-          <img src={apod.url} alt="APOD" width="800" height="auto" />
-          <p>{apod.explanation}</p>
-        
-        </article>
-      )}
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <div className="content" >
+          <Routes> {/* Wrap routes with <Routes> */}
+            <Route path="/home" element={<Home />} /> {/* Use 'element' prop to specify the component */}
+            <Route path="/image" element={<Image />} />
+            <Route path="/image-of-the-day" element={<ImageOftheDay />} /> {/* Route for ImageOftheDay component */}
+            <Route path="/mars-rover" element={<MarsRover />} /> {/* Route for ImageOftheDay component */}
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
+
 
 export default App;
