@@ -18,6 +18,7 @@ function App() {
             <Route path="/image" element={<Image />} />
             <Route path="/image-of-the-day" element={<ImageOftheDay />} /> {/* Route for ImageOftheDay component */}
             <Route path="/mars-rover" element={<MarsRover />} /> {/* Route for ImageOftheDay component */}
+            <Route path="/" element={<Home />} />
           </Routes>
          
         </div>
