@@ -40,6 +40,7 @@ class MarsRover extends Component {
   render() {
     const { photos } = this.state; // Destructure photos from state
     return (
+
       <div>
         <h1>NASA's Mars Rover Photos</h1>
         <div>
@@ -71,6 +72,7 @@ class MarsRover extends Component {
           )}
         </div>
       </div>
+
     );
   }
 }

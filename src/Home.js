@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Card from './js/Card';
 import axios from 'axios'; // Import axios
 import './css/Home.css';
+import spacestarbgimg from './images/spacestarbgimg.jpg'; 
+
 const Home = () => {
     const [randomImages, setRandomImages] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -25,12 +27,18 @@ const Home = () => {
 
 
   return (
+    <div style={{ 
+      backgroundImage: `url(${spacestarbgimg})`, // Apply the background image
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }}>
     <div className="home">
       {isLoading && <span className="loader">LOADING...</span>}
       {error && <span className="error">{error}</span>}
       {randomImages.map((image, index) => (
         <Card key={index} apod={image} /> // Pass apod prop to Card component
       ))}
+    </div>
     </div>
   );
 };
