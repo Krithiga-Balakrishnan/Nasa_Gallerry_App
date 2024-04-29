@@ -1,18 +1,29 @@
 import React from "react";
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
 
-export const Card = ({ apod }) => {
+const CustCard = ({ apod }) => {
   return (
-    <div className="card">
-      <img
-        src={apod.url}
-        alt={apod.title}
-      />
-      <div className="cardContent">
-        <h2>{apod.title}</h2>
-        <span>Date: {apod.date}</span>
-      </div>
-    </div>
+    <Card>
+      <Card.Img variant="top" src={apod.url} alt={apod.title} />
+      <Card.Body>
+        <Card.Title>{apod.title}</Card.Title>
+        <Card.Text>
+          Date: {apod.date}
+        </Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 
-export default Card;
+const GroupExample = ({ apods }) => {
+  return (
+    <CardGroup>
+      {apods.slice(0, 3).map((apod, index) => (
+        <CustCard key={index} apod={apod} />
+      ))}
+    </CardGroup>
+  );
+};
+
+export default GroupExample;

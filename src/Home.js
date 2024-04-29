@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Card from './js/Card';
 import axios from 'axios'; // Import axios
 import './css/Home.css';
-import spacestarbgimg from './images/spacestarbgimg.jpg'; 
+import spacestarbgimg from './images/spacestarbgimg.jpg';
+import GroupExample from './js/Card';
 
 const Home = () => {
     const [randomImages, setRandomImages] = useState([]);
@@ -32,13 +32,11 @@ const Home = () => {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat'
     }}>
-    <div className="home">
-      {isLoading && <span className="loader">LOADING...</span>}
-      {error && <span className="error">{error}</span>}
-      {randomImages.map((image, index) => (
-        <Card key={index} apod={image} /> // Pass apod prop to Card component
-      ))}
-    </div>
+   <div className="home">
+        {isLoading && <span className="loader">LOADING...</span>}
+        {error && <span className="error">{error}</span>}
+        <GroupExample apods={randomImages} /> {/* Render GroupExample */}
+      </div>
     </div>
   );
 };

@@ -1,36 +1,105 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
-import "../css/DateInput.css"
+import "../css/DateInput.css";
+import { getYear, getMonth } from "date-fns";
 
 import "react-datepicker/dist/react-datepicker.css";
 
-const DateInput = props => {
-    const [startDate, setStartDate] = useState(new Date());
+function range(start, end, step = 1) {
+  const length = Math.floor((end - start) / step) + 1;
+  return Array.from({ length }, (_, index) => start + index * step);
+}
 
-    const handleDateChange = date => {
-        setStartDate(date);
-        props.changeDate(date);
-    };
+const DateInput = (props) => {
+  const { date, changeDate } = props;
+  const [startDate, setStartDate] = useState(date);
+  const years = range(1990, getYear(new Date()) + 1, 1);
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
 
-    return (
-        <div className="input-container">
-        <div className="date-picker-container">
-            <label htmlFor="datePicker">Select a Date:</label>
-            <DatePicker
-                id="datePicker"
-                selected={startDate}
+  useEffect(() => {
+    setStartDate(date); // Update startDate when date prop changes
+  }, [date]); // Trigger useEffect when date prop changes
+
+  const handleDateChange = (selectedDate) => {
+    setStartDate(selectedDate);
+    changeDate(selectedDate);
+  };
+
+  return (
+    <div style={{ width: "300px", display: "inline-block" }}>
+      <DatePicker
+        renderCustomHeader={({
+          date,
+          changeYear,
+          changeMonth,
+          decreaseMonth,
+          increaseMonth,
+          prevMonthButtonDisabled,
+          nextMonthButtonDisabled,
+        }) => (
+          <div
+            style={{
+              margin: 10,
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              onClick={decreaseMonth}
+              disabled={prevMonthButtonDisabled}
+            >
+              {"<"}
+            </button>
+            <select
+              value={getYear(date)}
+              onChange={({ target: { value } }) => changeYear(value)}
+            >
+              {years.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={months[getMonth(date)]}
+              onChange={({ target: { value } }) =>
+                changeMonth(months.indexOf(value))
+              }
+            >
+              {months.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+
+            <button
+              onClick={increaseMonth}
+              disabled={nextMonthButtonDisabled}
+            >
+              {">"}
+            </button>
+          </div>
+        )}
+        selected={new Date(startDate)}
                 onChange={handleDateChange}
-            />
-        </div>
-        <div className="submit-button-container">
-            <input
-                type="submit"
-                value="Get Media"
-                className="submit-button"
-                onClick={() => console.log("Submit clicked")} // Add your logic here for the submit action
-            />
-        </div>
+      />
     </div>
-    );
+  );
 };
+
 export default DateInput;

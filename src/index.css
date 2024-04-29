@@ -10,11 +10,14 @@ body{
   /* background-color: #330d41!important; */
   background-color: #310e68!important;
   background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%)!important;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  min-height: 100vh;
+  background-repeat: no-repeat;
 
 }
 
 .navbar {
-  position: fixed; /* Make the navbar fixed */
+  position: absolute!important; /* Make the navbar fixed */
   top: 0; /* Position it at the top of the page */
   width: 100%; /* Make it full-width */
   display: flex;
