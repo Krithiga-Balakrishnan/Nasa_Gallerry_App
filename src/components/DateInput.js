@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
-import "../css/DateInput.css";
 import { getYear, getMonth } from "date-fns";
-
+import '../css/dateinput.css';
 import "react-datepicker/dist/react-datepicker.css";
 
 function range(start, end, step = 1) {
@@ -41,6 +40,7 @@ const DateInput = (props) => {
   return (
     <div style={{ width: "300px", display: "inline-block" }}>
       <DatePicker
+      showIcon
         renderCustomHeader={({
           date,
           changeYear,

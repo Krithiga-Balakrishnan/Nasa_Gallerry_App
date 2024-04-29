@@ -1,0 +1,16 @@
+.card {
+    transition:transform 0.2s ease !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    min-height: auto;
+  }
+  
+  .card:hover {
+
+    transform: scale(0.9    ) !important;
+  }
+  .list-group-item:hover {
+    background-color: #92b5d8;
+  }
+
+  

@@ -1,14 +1,18 @@
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the minimum and maximum width of grid items */
-  grid-gap: 20px; /* Adjust the gap between grid items */
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));  */
+  /* Adjust the minimum and maximum width of grid items */
+  /* grid-gap: 20px; */
+   /* Adjust the gap between grid items */
 }
 
 .photo-grid img {
-  width: 100%; /* Ensure images fill the grid item */
-  height: auto; /* Maintain aspect ratio */
+  width: absolute; /* Ensure images fill the grid item */
 }
 .MarsroverContent{
   padding-top: 5rem!important;
   padding: 2rem;
+  width: 100vw; /* Set width to 100% of viewport width */
+  height: 100vh;
 }
+

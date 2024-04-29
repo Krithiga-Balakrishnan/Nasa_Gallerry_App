@@ -1,0 +1,17 @@
+
+  
+  .react-datepicker__input-container input {
+    height:2.3rem; /* Make input height 100% of container */
+  }
+  
+  .react-datepicker__header {
+    padding-top: 10px; /* Increase padding at the top */
+  }
+  
+  .react-datepicker__navigation--previous,
+  .react-datepicker__navigation--next {
+    top: 50%; /* Adjust top position to center vertically */
+    transform: translateY(-50%); /* Translate up by half of its height */
+  }
+
+  

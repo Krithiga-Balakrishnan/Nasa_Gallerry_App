@@ -52,6 +52,7 @@ import Form from 'react-bootstrap/Form';
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
             >
+              
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   Offcanvas

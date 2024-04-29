@@ -27,7 +27,9 @@
 .submit-button-container {
     margin-left: 10px; /* Add margin between date picker and submit button */
 }
-.ImageOftheday{
-    padding-top: 5rem!important;
+div.ImageOftheday {
+    padding-top: 3rem!important;
     padding: 2rem;
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 100vh;
   }
