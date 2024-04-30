@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import { getYear, getMonth } from "date-fns";
-import '../css/dateinput.css';
+import '../css/DateInput.css';
 import "react-datepicker/dist/react-datepicker.css";
 
 function range(start, end, step = 1) {
