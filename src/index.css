@@ -59,6 +59,7 @@ body{
 }
 .content {
   display: flex;
+  padding-top: 2rem;
 }
 
 .dropdown {

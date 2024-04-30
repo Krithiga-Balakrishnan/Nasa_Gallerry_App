@@ -45,7 +45,7 @@ import Form from 'react-bootstrap/Form';
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3" data-bs-theme="dark">
           <Container fluid>
-          <Navbar.Brand as={Link} to="/">SpaceLens</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">GalaxyGaze</Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
           <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}

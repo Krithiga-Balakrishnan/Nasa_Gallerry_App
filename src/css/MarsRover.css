@@ -8,6 +8,7 @@
 
 .photo-grid img {
   width: absolute; /* Ensure images fill the grid item */
+  height: min-content;
 }
 .MarsroverContent{
   padding-top: 5rem!important;

@@ -33,20 +33,23 @@ function Login() {
         <div className="loginCont">
         <Container>
                         <div className="row gy-4 align-items-center">
-                            <div className="col-12 col-md-6 col-xl-7">
-                            <div className="d-flex justify-content-center ">
-                                <div className="col-12 col-xl-9">
-                                    <img className="img-fluid rounded mb-4" loading="lazy" src="./assets/img/bsb-logo-light.svg" width="245" height="80" alt="BootstrapBrain Logo" />
-                                    <hr className="border-primary-subtle mb-4" />
-                                    <h2 className="h1 mb-4">We make digital products that drive you to stand out.</h2>
-                                    <p className="lead mb-5">We write words, take photos, make videos, and interact with artificial intelligence.</p>
-                                    <div className="text-end">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className="bi bi-grip-horizontal" viewBox="0 0 16 16">
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <div className="col-12 col-md-6 col-xl-7">
+    <div className="d-flex ">
+        <div className="col-12 col-xl-9">
+            <img className="img-fluid rounded mb-4" loading="lazy" src="./assets/img/bsb-logo-light.svg" width="245" height="80" alt="BootstrapBrain Logo" />
+            <div class="mt-auto"> 
+                <hr className="border-primary-subtle mb-4" />
+                <h2 className="h1 mb-4">We make digital products that drive you to stand out.</h2>
+                <p className="lead mb-5">We write words, take photos, make videos, and interact with artificial intelligence.</p>
+            </div>
+            <div className="text-end">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className="bi bi-grip-horizontal" viewBox="0 0 16 16">
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+
                         <div className="col-12 col-md-6 col-xl-5">
                         <div className="login-wrap">
         <div className="login-html">
