@@ -27,8 +27,7 @@
 }
 
 .apod-article {
-  background-color: #f9f9f9;
-  padding: 20px;
+  background-color: #0a0a0a;
   border-radius: 10px;
 }
 
@@ -68,8 +67,33 @@
 }
 .imagecont {
   padding-top: 2rem !important;
-  padding: 1rem;
-  width: 100vw; /* Set width to 100% of viewport width */
-  height: 100vh;
+  width: -webkit-fill-available; /* Set width to 100% of viewport width */
+  height: -webkit-fill-available;
+  overflow-x: hidden;
 }
 
+.accordion-body{
+
+ background-color:#0a0a0a!important;
+ color: white;
+
+}
+.accordion-header{
+  background-color:#0a0a0a!important;
+
+}
+.accordion-item:last-of-type>.accordion-header .accordion-button.collapsed{
+  background-color:#0a0a0a!important;
+  color: white;
+
+}
+.accordion-item:first-of-type>.accordion-header .accordion-button{
+  background-color:#0a0a0a!important;
+  color: white!important;
+
+}
+.custom-accordion .accordion-button::after {
+  color: white!important;
+    font-size: large!important;
+
+}

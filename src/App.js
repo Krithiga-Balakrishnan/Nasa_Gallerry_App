@@ -1,15 +1,13 @@
 
 //import './App.css';
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Image from './Image';
 import Home from './Home';
 import ImageOftheDay from './ImageOftheDay';
 import MarsRover from './MarsRover';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import OffcanvasExample from './Navbar';
-import { GroupExample } from './js/Card';
-
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');

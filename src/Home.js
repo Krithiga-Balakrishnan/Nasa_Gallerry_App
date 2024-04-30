@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+//import React, { useState, useEffect } from 'react';
 import './css/Home.css';
 import spacestarbgimg from './images/spacestarbgimg.jpg';
-import GroupExample, { CustCard } from './js/Card';
+import GroupExample from './js/Card';
 
 const Home = ({ setCurrentPage }) => {
   //   const [isLoading, setIsLoading] = useState(false);
