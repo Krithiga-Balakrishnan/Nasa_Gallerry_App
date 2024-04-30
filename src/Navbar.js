@@ -43,7 +43,7 @@ import Form from 'react-bootstrap/Form';
     return (
       <>
       {[false].map((expand) => (
-        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3">
+        <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3" data-bs-theme="dark">
           <Container fluid>
           <Navbar.Brand as={Link} to="/">SpaceLens</Navbar.Brand>
           <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
@@ -51,9 +51,10 @@ import Form from 'react-bootstrap/Form';
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
+              data-bs-theme="dark"
             >
               
-              <Offcanvas.Header closeButton>
+              <Offcanvas.Header closeButton >
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
                   Offcanvas
                 </Offcanvas.Title>
@@ -65,8 +66,8 @@ import Form from 'react-bootstrap/Form';
               <Nav.Link as="button" onClick={() => setCurrentPage('image-of-the-day')}>Image of the Day</Nav.Link>
               <Nav.Link as="button" onClick={() => setCurrentPage('mars-rover')}>Mars Rover</Nav.Link>
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+                <NavDropdown.Item as="button" onClick={() => setCurrentPage('login')}>Login</NavDropdown.Item>
+                <NavDropdown.Item as="button" onClick={() => setCurrentPage('about')}>About</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
