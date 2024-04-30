@@ -9,11 +9,9 @@ const About=()=>{
         <div className="about">
             <div className="overlay"></div>
             <video src ={HorizonbgImg} autoPlay loop muted/>
-            <div className="content">
-            <section className="bg-primary py-3 py-md-5 py-xl-8">
+            <div className="aboutCont">
                 <p>Hello World</p>
                 <Button variant="outline-success">Search</Button>
-            </section>
             </div>
         </div>
     );

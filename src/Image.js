@@ -7,29 +7,36 @@ const Image = () => {
 
   useEffect(() => {
     async function fetchAndCacheAPIData() {
-      const today = new Date().toISOString().split('T')[0]; // Get today's date in yyyy-mm-dd format
-      const localKey = `NASA-${today}`;
-
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0'); // Adding 1 to month since it is zero-based
+      const day = String(today.getDate()).padStart(2, '0');
+      const formattedDate = `${year}-${month}-${day}`;
+  
+      const localKey = `NASA-${formattedDate}`;
+      const NASA_API_KEY = process.env.REACT_APP_NASA_API_KEY;
+  
       if (localStorage.getItem(localKey)) {
         const apiData = JSON.parse(localStorage.getItem(localKey));
         setApod(apiData);
-        console.log("Fetched from cache today");
+        console.log("Fetched from cache today:", apiData);
       } else {
         try {
-          const url = `${process.env.REACT_APP_NASA_ENDPOINT}planetary/apod?date==${today}&api_key=${process.env.REACT_APP_NASA_API_KEY}`;
+          const url = `https://api.nasa.gov/planetary/apod?date=${formattedDate}&api_key=${NASA_API_KEY}`;
           const res = await fetch(url);
           const apiData = await res.json();
           localStorage.setItem(localKey, JSON.stringify(apiData));
           setApod(apiData);
-          console.log("Fetched from API today");
+          console.log("Fetched from API today:", apiData);
         } catch (err) {
           console.log(err.message);
         }
       }
     }
-
+  
     fetchAndCacheAPIData();
-  }, []); // Empty dependency array ensures the effect runs only once after the initial render
+  }, []);
+  
 
 
 
@@ -57,7 +64,7 @@ const Image = () => {
                 ></iframe>
               ) : (
                 // Render image if media type is not video
-                apod && <img src={apod.url} alt="APOD" className="bgImage" style={{ maxWidth: "100%", height: "650px" }} />
+                apod && <img src={apod.url} alt="APOD" className="bgImage" style={{ maxWidth: "100%", height: "700px" }} />
               )}
             </div>
           </Col>

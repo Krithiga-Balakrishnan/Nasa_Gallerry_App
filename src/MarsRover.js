@@ -86,13 +86,11 @@ class MarsRover extends Component {
           <Button onClick={() => this.getMarsPhotos(this.state.date, this.state.camera)}>Fetch Images</Button>
           </Col>
         </Row>
-        <div className="photo-grid">
         {photos && photos.length > 0 ? (
             <ControlledCarousel photos={photos} />
             ) : (
             <p>No photos available for selected date and camera.</p>
           )}
-        </div>
       </div>
     );
   }

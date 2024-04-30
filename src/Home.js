@@ -48,7 +48,7 @@ const Home = ({ setCurrentPage }) => {
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       minHeight: '100vh',
-      minInlineSize:'-webkit-fill-available',
+      minInlineSize:'-webkit-fill-available', 
       display: 'flex', 
       justifyContent: 'center', 
       alignItems: 'center', 
