@@ -1,9 +1,8 @@
 import './css/MarsRover.css';
 import React, { Component } from "react";
 import moment from "moment";
-import { Container, Row, Col, Button, Accordion, InputGroup, Form } from "react-bootstrap";
+import { Row, Col, Button, InputGroup, Form } from "react-bootstrap";
 import DateInput from "./components/DateInput";
-import Photo from "./components/Photo.js";
 import HttpClient from "./HttpClient";
 import ControlledCarousel from "./components/ControlledCarousel";
 

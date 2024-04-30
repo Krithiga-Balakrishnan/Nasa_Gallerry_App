@@ -3,9 +3,7 @@
     import React, { Component } from "react";
     import moment from "moment";
     import DateInput from "./components/DateInput";
-    import Photo from "./components/Photo.js";
-    import Form from 'react-bootstrap/Form';
-    import { Container, Row, Col, InputGroup } from "react-bootstrap";
+    import { Row, Col, InputGroup } from "react-bootstrap";
 
 
 

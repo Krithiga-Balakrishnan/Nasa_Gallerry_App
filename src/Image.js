@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./css/Image.css";
 import { Container, Row, Col, Accordion } from "react-bootstrap";
-
 const Image = () => {
   const [apod, setApod] = useState({});
 

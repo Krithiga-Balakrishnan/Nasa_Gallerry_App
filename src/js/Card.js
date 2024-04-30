@@ -166,11 +166,8 @@
 import React, { useState } from "react";
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-import { Link } from 'react-router-dom';
 import '../css/card.css';
-import ImageOftheDay from '../ImageOftheDay';
-import MarsRover from '../MarsRover';
-import Image from '../Image';
+
 
 const CustCard = ({ apod, setCurrentPage }) => {
   const [showOptions, setShowOptions] = useState(false);
