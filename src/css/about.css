@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Be Vietnam Pro');
+
 .about{
     width:100%;
     height: 100vh;
+    font-family: 'Be Vietnam Pro', sans-serif;
 }
 
 video{

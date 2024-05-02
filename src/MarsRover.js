@@ -40,9 +40,9 @@ class MarsRover extends Component {
   };
 
   render() {
-    const { photos } = this.state; // Destructure photos from state
+    const { photos, loading } = this.state; // Destructure photos from state
 
-  // Group photos into sets of 3
+    // Group photos into sets of 3
 
     return (
       <div className='MarsroverContent'>
@@ -54,8 +54,8 @@ class MarsRover extends Component {
         <Row className="justify-content-between mt-3">
           <Col xs={2}></Col>
           <Col xs={12} sm={4} className="text-center">
-          <InputGroup>
-           <p>Select Date</p>
+            <InputGroup>
+              <p>Select Date</p>
               <DateInput
                 id="datePicker"
                 changeDate={this.changeDate}
@@ -65,10 +65,10 @@ class MarsRover extends Component {
           </Col>
           <Col xs={3}>
             <Form.Select
-            aria-label="Select camera"
-            onChange={this.changeCamera}
-           value={this.state.camera}
-            style={{ width: '20%!important', flex: 'none!important' }}
+              aria-label="Select camera"
+              onChange={this.changeCamera}
+              value={this.state.camera}
+              style={{ width: '20%!important', flex: 'none!important' }}
             >
               <option>Select Rover Camera</option>
               <option value="fhaz">Front Hazard Avoidance Camera</option>
@@ -83,14 +83,28 @@ class MarsRover extends Component {
             </Form.Select>
           </Col>
           <Col xs={3}>
-          <Button onClick={() => this.getMarsPhotos(this.state.date, this.state.camera)}>Fetch Images</Button>
+            <Button onClick={() => this.getMarsPhotos(this.state.date, this.state.camera)}>
+              {loading ? (
+                <i className="fas fa-satellite-dish fa-spin"></i>
+              ) : (
+                "Fetch Images"
+              )}
+            </Button>
+
           </Col>
         </Row>
-        {photos && photos.length > 0 ? (
+        {/* Conditionally render photos or loading spinner */}
+        {loading ? (
+          <div className="text-center mt-3">
+            <i className="fas fa-satellite-dish fa-spin"></i>
+          </div>
+        ) : (
+          photos && photos.length > 0 ? (
             <ControlledCarousel photos={photos} />
-            ) : (
+          ) : (
             <p>No photos available for selected date and camera.</p>
-          )}
+          )
+        )}
       </div>
     );
   }

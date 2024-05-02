@@ -36,7 +36,9 @@ function App() {
           {currentPage === 'picture-of-the-day' && < Image/>}
           {currentPage === 'picture-of-a-certain-day' && < ImageOftheDay/>}
           {currentPage === 'mars-rover-images' && < MarsRover/>}
-          {currentPage === 'about' && < About/>}
+          {currentPage === 'about' && <About setCurrentPage={setCurrentPage} />}
+
+
           </ProtectedRoute>
             )}
         </div>

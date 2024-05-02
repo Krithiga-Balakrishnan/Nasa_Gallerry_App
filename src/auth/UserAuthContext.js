@@ -14,7 +14,7 @@ import { getDatabase, ref, set, get } from "firebase/database";
 const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null); // Initialize user state with null
 
   function logIn(email, password) {
     return signInWithEmailAndPassword(auth, email, password);

@@ -1,7 +1,7 @@
 import '../css/Login.css'
 import React, { useState, useContext } from "react";
 import HorizonbgImg from '../images/HorizonAstronomy.mp4';
-import { Container, Alert } from 'react-bootstrap';
+import { Container, Alert, Row, Col } from 'react-bootstrap';
 import GoogleButton from "react-google-button";
 import { useUserAuth } from "../auth/UserAuthContext";
 
@@ -14,8 +14,10 @@ function Login({ setCurrentPage }) {
   const [userName, setUserName] = useState("");
   const [passwordSignup, setPasswordSignup] = useState("");
   const [repeatPasswordSignup, setRepeatPass] = useState("");
-  const { logIn, signUp } = useUserAuth();
+  const { logIn, signUp, googleSignIn } = useUserAuth();
   //  const navigate = useNavigate();
+
+  const [showPasswordMismatchAlert, setShowPasswordMismatchAlert] = useState(false); // State variable for password mismatch alert
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,6 +38,10 @@ function Login({ setCurrentPage }) {
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
     setError("");
+    if (passwordSignup !== repeatPasswordSignup) { // corrected variable name
+      setShowPasswordMismatchAlert(true); // Show the password mismatch alert
+      return;
+    }
     try {
       await signUp(emailSignUp, passwordSignup, userName); // Pass userName to signUp
       setCurrentPage('home'); 
@@ -47,29 +53,33 @@ function Login({ setCurrentPage }) {
   const handleAlertDismiss = () => {
     setError(""); // Clear the error message
   };
-  // const handleGoogleSignIn = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await googleSignIn();
-  //  setCurrentPage('home');
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // };
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      await googleSignIn();
+   setCurrentPage('home');
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className='login'>
       <video src={HorizonbgImg} autoPlay loop muted />
       <div className="loginCont">
-        <Container>
-          <div className="row gy-4 align-items-center">
+        <div className='logContsCont'>
+      <Container>
+      
+  <div className='logContsCont' style={{  paddingtop: '2rem!important'}}>
+  <Row>
+                  <div className="row gy-4 align-items-center">
             <div className="col-12 col-md-6 col-xl-7">
               <div className="d-flex ">
                 <div className="col-12 col-xl-9" style={{ marginBottom: '10px' }}>
                   <img className="img-fluid rounded mb-4" loading="lazy" src="./assets/img/bsb-logo-light.svg" width="245" height="80" alt="BootstrapBrain Logo" />
                   <div className="mt-auto">
                     <hr className="border-primary-subtle mb-4" />
-                    <h2 className="h1 mb-4">We make digital products that drive you to stand out.</h2>
-                    <p className="lead mb-5">We write words, take photos, make videos, and interact with artificial intelligence.</p>
+                    <h2 className="h1 mb-4">Explore the cosmos like never before.</h2>
+                    <p className="lead mb-5">Unlock a universe of captivating imagery with our free web app, fueled by NASA's API.</p>
                   </div>
                   <div className="text-end">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className="bi bi-grip-horizontal" viewBox="0 0 16 16">
@@ -110,14 +120,14 @@ function Login({ setCurrentPage }) {
                           <a href="#forgot">Forgot Password?</a>
                         </div>
                         <div className="hr"></div>
-                        {/* <div className='google'>
+                        <div className='google'>
               <GoogleButton
             className="g-btn width"
             type="dark"
             onClick={handleGoogleSignIn}
             style={{ width: 'auto!important', height: 'auto!important', borderRadius: '2rem!important' }}
           />
-          </div> */}
+          </div>
                       </div>
                     </form>
                     <form onSubmit={handleSignUpSubmit}>
@@ -126,10 +136,10 @@ function Login({ setCurrentPage }) {
                           <input id="userName" type="text" className="input" placeholder="User Name" onChange={(e) => setUserName(e.target.value)} />
                         </div>
                         <div className="group">
-                          <input id="passSignup" type="password" className="input" data-type="password" placeholder="Password" onChange={(e) => setPasswordSignup(e.target.value)} />
+                          <input id="passSignup" type="password" className="input" data-type="password" placeholder="Password" value={passwordSignup} onChange={(e) => setPasswordSignup(e.target.value)} />
                         </div>
                         <div className="group">
-                          <input id="repeatPassSignup" type="password" className="input" data-type="password" placeholder="Repeat Password" onChange={(e) => setRepeatPass(e.target.value)} />
+                          <input id="repeatPassSignup" type="password" className="input" data-type="password" placeholder="Repeat Password" value={repeatPasswordSignup} onChange={(e) => setRepeatPass(e.target.value)} />
                         </div>
                         <div className="group">
                           <input id="emailSignup" type="email" className="input" placeholder="Email address" onChange={(e) => setEmailSignUp(e.target.value)} />
@@ -145,7 +155,9 @@ function Login({ setCurrentPage }) {
                     </form>
                   </div>
                   <div className="hr"></div>
-
+                  <Alert variant="danger" dismissible show={showPasswordMismatchAlert} onClose={() => setShowPasswordMismatchAlert(false)} style={{ bottom: '20px', left: '50%', transform: 'translateX(-50%)' }}>
+                          Passwords don't match
+                        </Alert>
                   <div className="hr"></div>
 
                   <Alert variant="danger" dismissible show={!!error} onClose={handleAlertDismiss} style={{  bottom: '20px', left: '50%', transform: 'translateX(-50%)' }}>
@@ -156,7 +168,10 @@ function Login({ setCurrentPage }) {
             
             </div>
           </div>
+          </Row>
+          </div>
         </Container>
+        </div>
       </div>
       
 

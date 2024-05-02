@@ -1,3 +1,5 @@
+
+
 const Photo = props => {
   console.log('Photo component props:', props); // Log props to console for debugging
 
@@ -26,7 +28,8 @@ const Photo = props => {
         <p>{props.photo.explanation}</p>
       </>
     )}
-    {!props.photo && <p>Loading...</p>}
+  {!props.photo && <i className="fas fa-satellite-dish fa-spin"></i>}
+
   </div>
   );
 };
