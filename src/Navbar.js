@@ -7,39 +7,22 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
-
-// const OffcanvasExample = () => {
-//   const websiteName = "The Nasa App Gallery";
-
-  // return (
-  //   <nav className="navbar">
-  //     <div className="logo">
-  //       <img src="/nasalogo.png" alt="Logo" style={{ width: '60px', height: 'auto' }} />
-  //     </div>
-  //     <div className='brand'>
-  //       <div className='uniqueName'>
-  //         <span style={{ fontFamily: "'Audiowide', cursive", fontSize: '38px', textShadow: '4px 4px 4px #07b5f4' }}>
-  //           {websiteName}
-  //         </span>
-  //       </div>
-  //     </div>
-  //     <div className='links'>
-  //     <Link to="/home">Home</Link>
-  //     <Link to="/mars-rover">Mars Rover</Link>
-  //       <div className="dropdown">
-  //         <button className="dropbtn">Images</button>
-  //         <div className="dropdown-content">
-  //         <Link to="/image">Picture of the day</Link>
-  //         <Link to="/image-of-the-day">Image of any Day</Link>
-  //           <a href="/">Image 3</a>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   </nav>
-  // )
+import { useUserAuth } from "./auth/UserAuthContext";
 
 
   const OffcanvasExample = ({ currentPage, setCurrentPage }) => {
+    const { logOut, user } = useUserAuth();
+
+    const handleLogout = async () => {
+      try {
+          await logOut();
+          setCurrentPage('login'); // After logout, redirect to login page
+      } catch (error) {
+          console.log(error.message);
+      }
+  };
+
+
     return (
       <>
       {[false].map((expand) => (
@@ -56,7 +39,7 @@ import Form from 'react-bootstrap/Form';
               
               <Offcanvas.Header closeButton >
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Offcanvas
+                {user && (user.userName ? user.userName : (user.userEmail ? user.userEmail : ''))}
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
@@ -74,13 +57,7 @@ import Form from 'react-bootstrap/Form';
               </NavDropdown>
             </Nav>
             <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
+                  <Button variant="outline-success" id="logout" onClick={handleLogout}>Logout</Button>
                 </Form>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
@@ -93,5 +70,3 @@ import Form from 'react-bootstrap/Form';
 
 export default OffcanvasExample;
 
-
-// export default Navbar;
