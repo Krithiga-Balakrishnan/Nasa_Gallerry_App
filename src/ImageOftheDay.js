@@ -3,7 +3,7 @@
     import React, { Component } from "react";
     import moment from "moment";
     import DateInput from "./components/DateInput";
-    import { Row, Col, InputGroup } from "react-bootstrap";
+    import { Row, Col, InputGroup, Container } from "react-bootstrap";
 
 
 
@@ -34,7 +34,8 @@
 
 return (
     <div className='ImageOftheday'> {/* Use a div with custom class */}
-      <Row className="justify-content-center mt-5">
+    <Container>
+    <Row className="justify-content-center mt-5">
         <Col xs={12} className="text-center">
           <h1 className="fw-bold">NASA's Astronomy Picture of the Day</h1>
         </Col>
@@ -57,21 +58,25 @@ return (
     </Col>
     <Col xs={12} md={5} className="order-md-2"> {/* Explanation Column */}
       <div className="d-flex flex-column justify-content-start align-items-start">
-      <InputGroup className="mt-4">
-            <InputGroup.Text>Select Date</InputGroup.Text>
+      <Row className="mb-3">
+        <Col xs={4} md={4}>
+          <p>Select Date</p>
+        </Col>
+        <Col xs={6} md={4}>
             <DateInput
                 changeDate={this.changeDate}
                 date={this.state.date}
                 viewPhoto={this.viewPhoto}
             />
-          </InputGroup>
+</Col>
+      </Row>
         <h2 className="mt-4">{this.state.photo.title}</h2>
         <p className="fs-6"> {this.state.photo.date}</p>
         <p>{this.state.photo.explanation}</p>
       </div>
     </Col>
   </Row>
-
+  </Container>
   </div>
   
 );

@@ -24,7 +24,7 @@ function Login({ setCurrentPage }) {
     setError("");
     try {
       await logIn(email, password);
-      setCurrentPage('home');
+      setCurrentPage('about');
     } catch (err) {
       setError(err.message);
     }
@@ -44,7 +44,7 @@ function Login({ setCurrentPage }) {
     }
     try {
       await signUp(emailSignUp, passwordSignup, userName); // Pass userName to signUp
-      setCurrentPage('home'); 
+      setCurrentPage('about'); 
         } catch (err) {
       setError(err.message);
     }
@@ -57,7 +57,7 @@ function Login({ setCurrentPage }) {
     e.preventDefault();
     try {
       await googleSignIn();
-   setCurrentPage('home');
+   setCurrentPage('about');
     } catch (error) {
       console.log(error.message);
     }

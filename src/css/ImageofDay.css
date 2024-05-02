@@ -32,4 +32,5 @@ div.ImageOftheday {
     padding: 2rem;
     width: 100vw; /* Set width to 100% of viewport width */
     height: 100vh;
+    overflow-x: hidden;
   }

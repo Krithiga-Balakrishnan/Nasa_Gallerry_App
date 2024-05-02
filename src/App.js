@@ -14,7 +14,7 @@ import About from './js/About';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('login');
+  const [currentPage, setCurrentPage] = useState('about');
 
   return (
     <UserAuthContextProvider> {/* Wrap your entire App component */}
@@ -25,10 +25,11 @@ function App() {
         <div className="content">
         {currentPage === 'login' ? (
           <Login setCurrentPage={setCurrentPage} />
+          
               ) : (
 
-              <ProtectedRoute setCurrentPage={setCurrentPage}>
-
+              <ProtectedRoute currentPage={currentPage} setCurrentPage={setCurrentPage}>
+          {currentPage === 'about' && <About setCurrentPage={setCurrentPage} />}
           {currentPage === 'home' && <Home setCurrentPage={setCurrentPage} />} {/* Pass setCurrentPage */}
           {currentPage === 'image' && <Image />}
           {currentPage === 'image-of-the-day' && <ImageOftheDay />}
@@ -36,7 +37,6 @@ function App() {
           {currentPage === 'picture-of-the-day' && < Image/>}
           {currentPage === 'picture-of-a-certain-day' && < ImageOftheDay/>}
           {currentPage === 'mars-rover-images' && < MarsRover/>}
-          {currentPage === 'about' && <About setCurrentPage={setCurrentPage} />}
 
 
           </ProtectedRoute>

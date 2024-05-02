@@ -71,11 +71,11 @@ const OffcanvasExample = ({ currentPage, setCurrentPage }) => {
                   <Nav.Link as="button" onClick={() => setCurrentPage('image-of-the-day')}>Image of the Day</Nav.Link>
                   <Nav.Link as="button" onClick={() => setCurrentPage('mars-rover')}>Mars Rover</Nav.Link>
                   <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                    <NavDropdown.Item as="button" onClick={() => setCurrentPage('login')}>Login</NavDropdown.Item>
+                    {/* <NavDropdown.Item as="button" onClick={() => setCurrentPage('login')}>Login</NavDropdown.Item> */}
                     <NavDropdown.Item as="button" onClick={() => setCurrentPage('about')}>About</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                  
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                  
                   </NavDropdown>
                 </Nav>
                 

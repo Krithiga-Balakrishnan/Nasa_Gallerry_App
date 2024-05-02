@@ -1,12 +1,13 @@
 import React from "react";
 import { useUserAuth } from "../auth/UserAuthContext";
-const ProtectedRoute = ({ children, setCurrentPage }) => {
+import Login from '../js/Login'
+const ProtectedRoute = ({ children, setCurrentPage, currentPage }) => {
     const { user } = useUserAuth();
   
     console.log("Check user in Private: ", user);
-    if (!user) {
-        setCurrentPage('login');
-        return null; // or <></> to render nothing
+    if (!user && currentPage !== 'about') {
+      setCurrentPage('login');
+        return <Login setCurrentPage={() => {}} />;
       }
       return children;
     };

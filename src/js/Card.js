@@ -47,12 +47,12 @@ const GroupExample = ({ setCurrentPage }) => {
     {
       title: "APOD Image",
       url: "https://apod.nasa.gov/apod/image/1305/godafoss1600vetter.jpg",
-      listItems: ["Picture of the Day", "Picture of a certain day", "Interesting information"],
+      listItems: ["Picture of the Day", "Picture of a certain day"],
     },
     {
       title: "Mars Rover Image",
       url: "https://i.tmgrup.com.tr/anews/v1/2023/04/11/nasa-shares-highest-resolution-image-of-mars-ever-1681206953344.jpg",
-      listItems: ["Mars rover images", "Rover data", "Martian landscape"],
+      listItems: ["Mars rover images"],
     },
     // Add more apods here with different titles, URLs, and list items
   ];
