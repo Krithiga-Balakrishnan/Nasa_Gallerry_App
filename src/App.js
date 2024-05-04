@@ -21,7 +21,9 @@ function App() {
 
     <Router>
       <div className="App">
-        <OffcanvasExample currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      {currentPage !== 'login' && ( // Render OffcanvasExample only if currentPage is not 'login'
+            <OffcanvasExample currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          )}
         <div className="content">
         {currentPage === 'login' ? (
           <Login setCurrentPage={setCurrentPage} />

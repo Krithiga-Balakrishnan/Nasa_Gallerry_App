@@ -35,7 +35,16 @@ const OffcanvasExample = ({ currentPage, setCurrentPage }) => {
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="bg-body-tertiary mb-3" data-bs-theme="dark">
           <Container fluid>
-            <Navbar.Brand as={Link} to="/">GalaxyGaze</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/"onClick={() => setCurrentPage('about')}>
+            <img
+    src={process.env.PUBLIC_URL + './Navbar.svg'}
+    width="auto"
+    height="45"
+    className="d-inline-block align-top"
+    alt="GalaxyGaze Logo"
+    
+  />
+              </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -66,17 +75,17 @@ const OffcanvasExample = ({ currentPage, setCurrentPage }) => {
                 {!showUserProfile && (
 /* Display navigation options */
                 <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav.Link as="button" onClick={() => setCurrentPage('about')}>About</Nav.Link>
                   <Nav.Link as="button" onClick={() => setCurrentPage('home')}>Home</Nav.Link>
-                  <Nav.Link as="button" onClick={() => setCurrentPage('image')}>Image</Nav.Link>
-                  <Nav.Link as="button" onClick={() => setCurrentPage('image-of-the-day')}>Image of the Day</Nav.Link>
-                  <Nav.Link as="button" onClick={() => setCurrentPage('mars-rover')}>Mars Rover</Nav.Link>
-                  <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                  <NavDropdown title="APOD" id="basic-nav-dropdown" className="justify-content-center" style={{ display: 'flex', alignItems: 'center' }}>
                     {/* <NavDropdown.Item as="button" onClick={() => setCurrentPage('login')}>Login</NavDropdown.Item> */}
-                    <NavDropdown.Item as="button" onClick={() => setCurrentPage('about')}>About</NavDropdown.Item>
-                  
-                    <NavDropdown.Divider />
+                    <NavDropdown.Item as="button" onClick={() => setCurrentPage('image')}>Image</NavDropdown.Item>
+                    <NavDropdown.Item  as="button" onClick={() => setCurrentPage('image-of-the-day')}>Image of the Day</NavDropdown.Item>                  
+                    {/* <NavDropdown.Divider /> */}
                   
                   </NavDropdown>
+                  <Nav.Link as="button" onClick={() => setCurrentPage('mars-rover')}>Mars Rover</Nav.Link>
+                 
                 </Nav>
                 
               )}

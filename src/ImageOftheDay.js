@@ -40,6 +40,18 @@ return (
           <h1 className="fw-bold">NASA's Astronomy Picture of the Day</h1>
         </Col>
       </Row>
+      <Row className="mb-3">
+        <Col xs={4} md={4}>
+          <p>Select Date</p>
+        </Col>
+        <Col xs={6} md={4}>
+            <DateInput
+                changeDate={this.changeDate}
+                date={this.state.date}
+                viewPhoto={this.viewPhoto}
+            />
+</Col>
+      </Row>
       <Row className="mt-4">
     <Col xs={12} md={7} className="order-md-1"> {/* Image Column */}
     {photo && photo.media_type === 'video' ? (
@@ -58,18 +70,7 @@ return (
     </Col>
     <Col xs={12} md={5} className="order-md-2"> {/* Explanation Column */}
       <div className="d-flex flex-column justify-content-start align-items-start">
-      <Row className="mb-3">
-        <Col xs={4} md={4}>
-          <p>Select Date</p>
-        </Col>
-        <Col xs={6} md={4}>
-            <DateInput
-                changeDate={this.changeDate}
-                date={this.state.date}
-                viewPhoto={this.viewPhoto}
-            />
-</Col>
-      </Row>
+     
         <h2 className="mt-4">{this.state.photo.title}</h2>
         <p className="fs-6"> {this.state.photo.date}</p>
         <p>{this.state.photo.explanation}</p>

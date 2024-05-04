@@ -66,20 +66,19 @@ function Login({ setCurrentPage }) {
     <div className='login'>
       <video src={HorizonbgImg} autoPlay loop muted />
       <div className="loginCont">
-        <div className='logContsCont'>
-      <Container>
+       
+      <Container style={{  paddingtop: '2rem!important'}}>
       
-  <div className='logContsCont' style={{  paddingtop: '2rem!important'}}>
+  <div className='logContsCont' >
   <Row>
                   <div className="row gy-4 align-items-center">
             <div className="col-12 col-md-6 col-xl-7">
               <div className="d-flex ">
-                <div className="col-12 col-xl-9" style={{ marginBottom: '10px' }}>
-                  <img className="img-fluid rounded mb-4" loading="lazy" src="./assets/img/bsb-logo-light.svg" width="245" height="80" alt="BootstrapBrain Logo" />
+                <div className="col-12 col-xl-9" style={{ marginTop: '10rem' }}>
+                  <img className="img-fluid rounded mb-2" loading="lazy" src="../LoginLogo3.png" width="245" height="80" alt="BootstrapBrain Logo" />
                   <div className="mt-auto">
-                    <hr className="border-primary-subtle mb-4" />
-                    <h2 className="h1 mb-4">Explore the cosmos like never before.</h2>
-                    <p className="lead mb-5">Unlock a universe of captivating imagery with our free web app, fueled by NASA's API.</p>
+                    <h2 className="h1 mb-2">Explore the cosmos like never before.</h2>
+                    <p className="lead mb-2">Unlock a universe of captivating imagery with our free web app, fueled by NASA's API.</p>
                   </div>
                   <div className="text-end">
                     <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" className="bi bi-grip-horizontal" viewBox="0 0 16 16">
@@ -173,10 +172,7 @@ function Login({ setCurrentPage }) {
         </Container>
         </div>
       </div>
-      
 
-
-    </div>
 
   );
 }

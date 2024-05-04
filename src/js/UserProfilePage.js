@@ -63,14 +63,21 @@ const UserProfilePage = () => {
                   disabled // Add the disabled attribute
                 />
               </Form.Group>
-              <Button variant="primary" onClick={handleSaveProfile}>Save</Button>{' '}
-              <Button variant="secondary" onClick={handleCancelEdit}>Cancel</Button>
+              <div style={{ display: 'flex', justifyContent: 'center',marginTop:'2rem', marginBottom: '20px' }}>
+    <Button variant="outline-success" id="saveProf" onClick={handleSaveProfile} style={{ marginRight: '10px' }}>Save</Button>
+    <Button variant="outline-secondary" onClick={handleCancelEdit}>Cancel</Button>
+  </div>
             </Form>
           ) : (
             <>
               <p><strong>Name:</strong> {user.userName}</p>
               <p><strong>Email:</strong> {user.email}</p>
-              <Button variant="primary" onClick={handleEditProfile}>Edit Profile</Button>
+              <Form className="d-flex align-items-center">
+
+              <Button variant="outline-success" id="editProf" onClick={handleEditProfile} className="flex-grow-1" style={{marginBottom:'2rem'}}>
+            
+                Edit Profile</Button>
+</Form>
             </>
           )}
           {/* If user has profile picture, display it */}

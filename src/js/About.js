@@ -13,9 +13,9 @@ const About=({ setCurrentPage })=>{
             <video src ={HorizonbgImg} autoPlay loop muted/>
             <div className="aboutCont">
                 <Container style={{ textAlign: 'center' }}>
-            <p style={{ fontFamily: 'Be Vietnam Pro', fontSize: '28px', textAlign: 'center', paddingBottom:'3rem'}}>Welcome to GalaxyGaze! Our free source application provides a platform to embark on an extraordinary journey! Immerse yourself in the wonders of the cosmos as you discover captivating images and delve into fascinating insights from space exploration.</p>
+            <p style={{ fontFamily: 'Be Vietnam Pro', fontSize: '28px', textAlign: 'center', paddingBottom:'3rem', paddingTop:'3rem'}}>Welcome to GalaxyGaze! Our free source application provides a platform to embark on an extraordinary journey! Immerse yourself in the wonders of the cosmos as you discover captivating images and delve into fascinating insights from space exploration.</p>
 
-            <Button className="btn btn-primary" onClick={() => setCurrentPage('home')} >Discover</Button>
+            <Button variant="outline-primary" onClick={() => setCurrentPage('home')} >Discover</Button>
             </Container>
             </div>
         </div>
