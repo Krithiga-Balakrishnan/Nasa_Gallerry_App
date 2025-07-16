@@ -1,10 +1,10 @@
-#  GalaxyGaze - NASA Image Explorer
+# GalaxyGaze - NASA Image Explorer
 
 **GalaxyGaze** is an interactive web application that allows users to explore the wonders of the cosmos using NASA's public APIs. Users can view the Astronomy Picture of the Day (APOD), explore Mars rover photos, and manage a secure personal profile through Firebase authentication.
 
 ---
 
-##  Features
+## Features
 
 -  **User Authentication**
   - Email & password sign-up/login
@@ -33,13 +33,13 @@
 
 ## NASA APIs Used
 
-### 🔭 Astronomy Picture of the Day (APOD)
+### Astronomy Picture of the Day (APOD)
 - **Endpoint**: `https://api.nasa.gov/planetary/apod`
 - **Parameters**:
   - `date`: `YYYY-MM-DD`
   - `api_key`: Your NASA API key
 
-### 🤖 Mars Rover Photos (Curiosity)
+### Mars Rover Photos (Curiosity)
 - **Endpoint**:  
   `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=YYYY-MM-DD&camera={camera}`
 - **Parameters**:
@@ -81,13 +81,11 @@ git clone https://github.com/your-username/Nasa_Gallerry_App.git
 cd Nasa_Gallerry_App
 npm install
 npm start
+```
 
 ---
 
-##  Author
+## Author
 
 **Krithiga D. Balakrishnan**  
-[GitHub](https://github.com/Krithiga-Balakrishnan) | [Portfolio](https://krithiga-balakrishnan.vercel.app)
-
----
-
+[GitHub](https://github.com/Krithiga-Balakrishnan) • [Portfolio](https://krithiga-balakrishnan.vercel.app)
