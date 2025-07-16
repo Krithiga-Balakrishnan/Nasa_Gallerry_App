@@ -82,8 +82,12 @@ cd Nasa_Gallerry_App
 npm install
 npm start
 
+---
 
 ##  Author
 
 **Krithiga D. Balakrishnan**  
 [GitHub](https://github.com/Krithiga-Balakrishnan) | [Portfolio](https://krithiga-balakrishnan.vercel.app)
+
+---
+
