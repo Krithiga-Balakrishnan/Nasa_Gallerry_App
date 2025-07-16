@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+#  GalaxyGaze - NASA Image Explorer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**GalaxyGaze** is an interactive web application that allows users to explore the wonders of the cosmos using NASA's public APIs. Users can view the Astronomy Picture of the Day (APOD), explore Mars rover photos, and manage a secure personal profile through Firebase authentication.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Features
 
-### `npm start`
+-  **User Authentication**
+  - Email & password sign-up/login
+  - Google OAuth login
+  - Secure logout
+-  **User Profile Management**
+  - View and update username
+-  **Astronomy Picture of the Day**
+  - View today’s image or search by date
+-  **Mars Rover Images**
+  - View photos by date and camera from the Curiosity rover
+-  **Responsive Design**
+  - Seamless UX across desktops, tablets, and mobile devices
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+- **Frontend**: React
+- **Authentication**: Firebase Auth
+- **API Integration**: NASA Open APIs
+- **Styling**: Tailwind CSS (or relevant CSS framework)
+- **State Management**: React Hooks
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## NASA APIs Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔭 Astronomy Picture of the Day (APOD)
+- **Endpoint**: `https://api.nasa.gov/planetary/apod`
+- **Parameters**:
+  - `date`: `YYYY-MM-DD`
+  - `api_key`: Your NASA API key
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 🤖 Mars Rover Photos (Curiosity)
+- **Endpoint**:  
+  `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=YYYY-MM-DD&camera={camera}`
+- **Parameters**:
+  - `earth_date`: `YYYY-MM-DD`
+  - `camera`: Optional camera name
+  - `api_key`: Your NASA API key
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Authentication Guide
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Sign Up**: Email, password, and username
+- **Log In**: With registered credentials or Google
+- **Account Info**: Username & email shown in navbar
+- **Edit Profile**: Click on username to update
+- **Logout**: Button in navigation menu
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Challenges Faced
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-  **API Rate Limiting**: Managed NASA's usage restrictions with fallback handling.
+-  **Performance Optimization**: Efficient rendering of large image datasets.
+-  **Secure Auth Integration**: Implemented privacy-respecting Firebase auth.
+-  **Cross-Platform Responsiveness**: Ensured UI worked across screen sizes and browsers.
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> *(Add screenshots of Home page, APOD page, Mars Rover page, and Profile Management UI here)*
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Installation
 
-### Analyzing the Bundle Size
+```bash
+git clone https://github.com/your-username/Nasa_Gallerry_App.git
+cd Nasa_Gallerry_App
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+##  Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Krithiga D. Balakrishnan**  
+[GitHub](https://github.com/Krithiga-Balakrishnan) | [Portfolio](https://krithiga-balakrishnan.vercel.app)
