@@ -68,12 +68,6 @@
 
 ---
 
-## Screenshots
-
-> *(Add screenshots of Home page, APOD page, Mars Rover page, and Profile Management UI here)*
-
----
-
 ## Installation
 
 ```bash
